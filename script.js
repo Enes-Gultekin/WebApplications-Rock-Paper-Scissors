@@ -1,32 +1,40 @@
-const rock = document.getElementById("rock_button");
-const paper = document.getElementById("paper_button");
-const scissors = document.getElementById("scissors_button");
-const game_buttons = document.querySelectorAll("selector");
-const paragraph = document.createElement("p");
-const random_number = Math.floor(Math.random() * 2 + 1);
-const objects = ["Rock", "Paper", "Scissors"];
-const result_sentence = document.getElementById("results");
+const game_buttons = document.querySelectorAll("#buttons");
+//selects all elements in the id but careful: "#"
+const result_game = document.getElementById("results");
 let player;
+const objects = ["rock", "paper", "scissors"];
 
+const paragraph = document.createElement("p");
 game_buttons.forEach((button) =>
   button.addEventListener("click", () => {
-    player = game_buttons.textContent;
-    init();
+    const random_number = Math.floor(Math.random() * 3) + 1;
+    player = button.textContent;
+    player = player.toLowerCase();
+    console.log(`computers number: ${random_number}`);
+    console.log(`computers object: ${objects[random_number - 1]}`);
+    console.log(`player: ${player}`);
+    cond(random_number);
+    result_game.appendChild(paragraph);
   })
 );
-function init() {
-  console.log(objects[random_number]);
-  console.log(player);
-  if (objects[random_number] == player) {
-    paragraph.textContent = `Draw: ${player} ${objects[random_number]}`;
-  } else if (
-    (player === "Rock" && random_number === "3") ||
-    (player === "Paper" && random_number === "1") ||
-    (player === "Scissors" && random_number === "2")
+
+function cond(random_number) {
+  if (
+    (player === "rock" && random_number === 3) ||
+    (player === "paper" && random_number === 1) ||
+    (player === "scissors" && random_number === 2)
   ) {
-    paragraph.textContent = `you won ${player} ${objects[random_number]}`;
+    paragraph.textContent = `You Won: The Player="${player}" and The Computer= "${
+      objects[random_number - 1]
+    }`;
+  } else if (player === objects[random_number - 1]) {
+    paragraph.textContent = `Draw: The Player="${player}" and The Computer= "${
+      objects[random_number - 1]
+    }`;
   } else {
-    paragraph.textContent = `You lost: ${player} ${objects[random_number]}`;
+    paragraph.textContent = `You lose: The Player="${player}" and The Computer= "${
+      objects[random_number - 1]
+    }"`;
   }
-  return result_sentence.appendChild(paragraph);
+  return paragraph;
 }

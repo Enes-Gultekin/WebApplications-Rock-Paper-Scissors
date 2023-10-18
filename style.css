@@ -2,3 +2,12 @@ img {
   width: 200px;
   height: 200px;
 }
+#selector {
+  transform: scale(0.8);
+  transition: 0.3s;
+}
+#selector:active {
+  transform: scale(0.9);
+  background-color: yellow;
+}
+#selector: ;
