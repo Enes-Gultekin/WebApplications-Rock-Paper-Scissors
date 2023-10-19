@@ -1,13 +1,51 @@
 img {
   width: 200px;
   height: 200px;
+  border-radius: 50px;
 }
 #selector {
-  transform: scale(0.8);
-  transition: 0.3s;
+  position: absolute;
+  margin-left: 5cm;
 }
-#selector:active {
-  transform: scale(0.9);
+
+button {
+  transform: scale(0.8);
+  transition: transform 0.3s ease;
+  border-radius: 32px 64px;
+  font-size: small;
+}
+
+button:hover {
+  transform: scale(1);
+  font-size: medium;
+}
+button:active {
   background-color: yellow;
 }
-#selector: ;
+#title {
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-style: italic;
+  text-decoration: underline;
+  text-align: center;
+}
+
+#results p {
+  font-size: x-large;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+  text-align: center;
+  margin-top: 10cm;
+}
+#results {
+  border-radius: 2px;
+  border-color: black;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+  background-color: #f0f0f0;
+  color: indigo;
+}
+
+body {
+  border-radius: 10px;
+  border-style: double;
+  padding-bottom: 20cm;
+}

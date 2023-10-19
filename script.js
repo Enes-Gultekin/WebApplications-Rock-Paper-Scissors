@@ -26,15 +26,16 @@ function cond(random_number) {
   ) {
     paragraph.textContent = `You Won: The Player="${player}" and The Computer= "${
       objects[random_number - 1]
-    }`;
+    }"`;
   } else if (player === objects[random_number - 1]) {
     paragraph.textContent = `Draw: The Player="${player}" and The Computer= "${
       objects[random_number - 1]
-    }`;
+    }"`;
   } else {
-    paragraph.textContent = `You lose: The Player="${player}" and The Computer= "${
+    paragraph.textContent = `You lost: The Player="${player}" and The Computer= "${
       objects[random_number - 1]
     }"`;
   }
   return paragraph;
 }
+function loading_screen() {}
